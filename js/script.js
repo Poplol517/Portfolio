@@ -113,21 +113,6 @@ window.addEventListener('scroll', changeNavbarTheme);
 // Initial theme update when the page loads
 changeNavbarTheme();
 
-
-window.onload = function() {
-    const contentContainer = document.querySelector('.content-container');
-    const contentLeftElements = document.querySelectorAll('.left');
-    const contentRightElements = document.querySelectorAll('.right');
-
-    // Fade in the welcome message first
-    contentContainer.classList.add('fade-in');
-
-    // Delay the execution of other animations until the welcome animation is fully visible
-    setTimeout(() => {
-        animateLeftRightLeft([...contentLeftElements, ...contentRightElements]);
-    }, 3000); // Wait for the "Welcome" fade-in to complete (4 seconds)
-};
-
 function animateLeftRightLeft(elements) {
     const leftElements = document.querySelectorAll('.left');
     const rightElements = document.querySelectorAll('.right');
@@ -151,3 +136,115 @@ function animateLeftRightLeft(elements) {
         }, delay); // Delay the entire sequence
     });
 }
+
+// Function to animate progress bars from 0% to the target value
+function animateProgressBars() {
+    const progressBars = document.querySelectorAll('.progress');
+    
+    progressBars.forEach(bar => {
+        const progressValue = bar.getAttribute('data-progress'); // Get the target progress value (e.g., '85%')
+        
+        // Start from 0% width immediately (default in CSS)
+        bar.style.width = '0%';
+        
+        // Use a setTimeout to trigger the width change after a small delay
+        setTimeout(() => {
+            bar.style.width = progressValue; // Animate to the target value (e.g., '85%')
+        }, 100); // Small delay before starting the animation (100ms)
+    });
+}
+
+// Function to handle tab switching
+document.addEventListener("DOMContentLoaded", function() {
+    const tabs = document.querySelectorAll(".tab-link");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            // Remove active class from all tabs and hide all tab contents
+            tabs.forEach(tab => tab.classList.remove("active"));
+            tabContents.forEach(content => content.classList.remove("active"));
+
+            // Add active class to the clicked tab and show corresponding content
+            tab.classList.add("active");
+            const target = tab.getAttribute("data-tab");
+            document.getElementById(target).classList.add("active");
+            animateProgressBars()
+        });
+    });
+
+    // Initially trigger the first tab click
+    tabs[0].click();
+});
+
+
+
+window.onload = function() {
+    const contentContainer = document.querySelector('.content-container');
+
+    // Fade in the welcome message first
+    contentContainer.classList.add('fade-in');
+}; 
+
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to animate elements when they come into view
+function animateOnScroll() {
+    const leftElements = document.querySelectorAll('.left');
+    const rightElements = document.querySelectorAll('.right');
+
+    leftElements.forEach((element) => {
+        if (isInViewport(element)) {
+            element.classList.add('visible'); // Add class when in viewport
+        }
+    });
+
+    rightElements.forEach((element) => {
+        if (isInViewport(element)) {
+            element.classList.add('visible'); // Add class when in viewport
+        }
+    });
+}
+
+// Function to animate progress bars on scroll
+function animateProgressBarsOnScroll() {
+    const progressBars = document.querySelectorAll('.progress');
+
+    progressBars.forEach((bar) => {
+        if (isInViewport(bar)) {
+            const progressValue = bar.getAttribute('data-progress');
+            bar.style.width = progressValue; // Animate progress bar when it enters view
+        }
+    });
+}
+
+// Event listener for scrolling
+window.addEventListener("scroll", () => {
+    animateOnScroll();
+    animateProgressBarsOnScroll();
+});
+
+// Trigger animation for elements already in view on page load
+document.addEventListener("DOMContentLoaded", () => {
+    animateOnScroll();
+    animateProgressBarsOnScroll();
+});
+
+document.querySelector(".scroll-link").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent default jump behavior
+
+    const target = document.querySelector("#skills"); // Target element
+    window.scrollTo({
+        top: target.offsetTop -100, // Adjust the offset if needed
+        behavior: "smooth" // Enables smooth scrolling
+    });
+});
