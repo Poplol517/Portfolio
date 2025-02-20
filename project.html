@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/project_styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo"><a>Samuel Leau</a></div>
+        <ul class="nav-links">
+            <li><a href="main.html#home">Home</a></li>
+            <li><a href="main.html#about">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="main.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h1>My Projects</h1>
+        <p>Explore my Hardware and Software projects!</p>
+
+        <!-- Tabs for Hardware & Software -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('hardware')">Hardware Projects</button>
+            <button class="tab-button" onclick="showTab('software')">Software Projects</button>
+        </div>
+
+        <!-- Hardware Projects -->
+        <div id="hardware" class="tab-content active">
+            <table class="projects-table">
+                <tbody>
+                    <tr class="project-row" onclick="toggleDetails('hardware1-details')">
+                        <th>Arduino Robot <i class="fas fa-chevron-down"></i></th>
+                    </tr>
+                    <tr id="hardware1-details" class="project-details">
+                        <td>
+                            <p>This Arduino-based robot navigates obstacles using ultrasonic sensors.</p>
+                        </td>
+                    </tr>
+
+                    <tr class="project-row" onclick="toggleDetails('hardware2-details')">
+                        <th>IoT Weather Station <i class="fas fa-chevron-down"></i></th>
+                    </tr>
+                    <tr id="hardware2-details" class="project-details">
+                        <td>
+                            <p>Uses ESP8266 to send real-time weather data to a cloud dashboard.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Software Projects -->
+        <div id="software" class="tab-content">
+            <table class="projects-table">
+                <tbody>
+                    <tr class="project-row" onclick="toggleDetails('software1-details')">
+                        <th>Task Manager App <i class="fas fa-chevron-down"></i></th>
+                    </tr>
+                    <tr id="software1-details" class="project-details">
+                        <td>
+                            <p>Built with React and Firebase, this app allows users to track tasks efficiently.</p>
+                        </td>
+                    </tr>
+
+                    <tr class="project-row" onclick="toggleDetails('software2-details')">
+                        <th>Portfolio Website <i class="fas fa-chevron-down"></i></th>
+                    </tr>
+                    <tr id="software2-details" class="project-details">
+                        <td>
+                            <p>Built using HTML, CSS, and JavaScript to showcase my projects.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="js/project_script.js"></script>
+</body>
+</html>

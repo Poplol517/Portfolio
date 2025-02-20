@@ -1,0 +1,318 @@
+/* General Styles */
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling across the page */
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+.logo{
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: bold; /* Make the logo text bold */
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent; /* Transparent background */
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 95%; /* Adjust this to control width */
+    max-width: 3000px; /* Optional: Limit max width */
+    margin: 0 auto; /* Center the navbar */
+    left: 0;
+    right: 0;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: none; /* Remove shadow */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 5px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0); /* Default text color */
+    font-size: 18px;
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition */
+    padding: 8px 15px;
+    border-radius: 10px; /* Rounded edges for links */
+}
+
+/* Hover effect */
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: #000000; /* Change background to black on hover */
+    color: #ffffff; /* Change text to white */
+}
+
+/* Sections */
+.section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container {
+    opacity: 0;
+    transition: opacity 3.5s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+/* About Me Section */
+.container {
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 80px;
+}
+
+.profile-pic-container {
+    display: flex; /* Aligns items in a row */
+    align-items: flex-start; /* Aligns the items to the top */
+    justify-content: center; /* Aligns the profile picture to the left */
+    width: 100%; /* Ensures the container spans the full width */
+}
+
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-right: 20px; /* Space between the image and the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #000000;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column; /* Stack the text vertically */
+}
+
+
+#description {
+    width: 700px;
+    font-size: 16px; /* Adjust text size as needed */
+    line-height: 1.5;
+    justify-content: left;
+    align-items: left;
+}
+
+
+p{
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+}
+
+h1 {
+    color: #333;
+    font-size: 200px;
+    transition: transform 0.5s ease-in-out, color 0.5s;
+}
+
+h2 {
+    color: #333;
+    font-size: 150px;
+    transition: transform 0.5s ease-in-out, color 0.5s;
+}
+
+h3 {
+    font-size:25px;
+    text-align: left;
+    margin-bottom: 10px; /* Add some space below the h3 */
+}
+
+li{
+    font-size: 20px;
+}
+
+.left {
+    margin-top: 30px; /* Add space between sections */
+    text-align: left;
+    margin-left: -270px;
+    max-width: 800px; /* Adjust the width as needed */
+    width: 100%; /* Ensures it doesn't exceed the max-width */
+}
+
+.right {
+    text-align: right;
+    margin-right: -370px;
+    max-width: 800px; /* Adjust the width as needed */
+    width: 100%; /* Ensures it doesn't exceed the max-width */
+}
+
+/* Left and Right Content Animation */
+.left, .right {
+    opacity: 0;
+    transition: opacity 4s ease-in-out, transform 4s ease-in-out;
+}
+
+/* When these sections become visible (scrolled into view) */
+.left.visible, .right.visible {
+    opacity: 1;
+    transform: translateX(0); /* Optional: Add a transition if you want a slide effect */
+}
+
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Initial state for the contact title */
+#contact-title {
+    opacity: 0; /* Start with zero opacity */
+    transform: translateX(-150%); /* Keep it off-screen to the left initially */
+    transition: opacity 4s ease, transform 4s ease; /* Slow fade-in speed */
+}
+
+/* When the section becomes visible (scrolled into view) */
+#contact-title.visible {
+    opacity: 1; /* Fade to full opacity */
+    transform: translateX(0); /* Move the title back to its original position */
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    justify-content: center; /* Center the links */
+    gap: 20px; /* Space between the links */
+    margin-top: 15px;
+    opacity: 0;
+    transform: translateX(-200%);
+    transition: opacity 4s ease, transform 4s ease; /* Slow fade-in for social links */
+}
+
+.social-links.visible {
+    opacity: 1; /* Fade the social links to full opacity */
+    transform: translateX(0); /* Move social links back to original position */
+}
+
+/* Social Media Icon */
+.social-icon {
+    text-decoration: none;
+    color: #000000; /* LinkedIn blue */
+    font-size: 24px;
+    gap:10px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+/* Change icon color on hover */
+.social-icon:hover {
+    color: #005e92; /* Darker LinkedIn blue */
+}
+
+/* Existing Button with Right Arrow */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid #000000;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    width: 100px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #000000;
+    color: white;
+    width: calc(15%); /* Expands width to accommodate the arrow */
+}
+
+.btn::after {
+    content: '→'; /* Right arrow symbol */
+    position: absolute;
+    right: -20px; /* Position it outside the button */
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: right 0.3s ease, opacity 0.3s ease;
+    font-size: 20px;
+}
+
+.btn:hover::after {
+    right: 5px; /* Arrow comes inside the button */
+    opacity: 1;
+}
+
+/* New Button with Left Arrow */
+.btn-left {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid #000000;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    width: 100px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.btn-left:hover {
+    background-color: #000000;
+    color: white;
+    width: calc(15%); /* Expands width to accommodate the arrow */
+}
+
+.btn-left::before {
+    content: '←'; /* Left arrow symbol */
+    position: absolute;
+    left: -20px; /* Position it outside the button */
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: left 0.3s ease, opacity 0.3s ease;
+    font-size: 20px;
+}
+
+.btn-left:hover::before {
+    left: 10px; /* Arrow comes inside the button */
+    opacity: 1;
+}
