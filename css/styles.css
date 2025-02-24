@@ -582,7 +582,7 @@ th {
 .timeline-item.visible {
     opacity: 1;
     transform: translateX(0);
-    transition: opacity 1s ease, transform 0.5s ease; /* Faster transition */
+    transition: opacity 0.35s ease, transform 0.5s ease; /* Faster transition */
 }
 
 .click-more {

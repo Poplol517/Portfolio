@@ -109,17 +109,18 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Get the modal and the project entry
-// Get the modals
 let fullsdModal = document.getElementById("projectModal");
 let iotProjectModal = document.getElementById("iotprojectModal");
 let aimlProjectModal = document.getElementById("aimlprojectModal");
 let mdadProjectModal = document.getElementById("mdadprojectModal");
+let haiProjectModal = document.getElementById("haiprojectModal");
 
 // Get the project entries
 let fullsdProjectEntry = document.getElementById("sell-swap-project");
 let iotProjectEntry = document.getElementById("smart-home-project");
 let aimlProjectEntry = document.getElementById("aiml-project");
 let mdadProjectEntry = document.getElementById("mdad-project");
+let haiProjectEntry = document.getElementById("hai-project");
 
 // Get the close buttons for both modals
 let closeBtns = document.getElementsByClassName("close");
@@ -147,6 +148,10 @@ mdadProjectEntry.addEventListener("click", function() {
     openProjectModal(mdadProjectModal);
 });
 
+haiProjectEntry.addEventListener("click", function() {
+    openProjectModal(haiProjectModal);
+});
+
 // When the user clicks on <span> (x), close the corresponding modal
 Array.from(closeBtns).forEach(function(closeBtn) {
     closeBtn.addEventListener("click", function() {
@@ -167,6 +172,9 @@ window.addEventListener("click", function(event) {
     }
     if (event.target == mdadProjectModal) {
         mdadProjectModal.style.display = "none";
+    }
+    if (event.target == haiProjectModal) {
+        haiProjectModal.style.display = "none";
     }
 });
 
@@ -286,6 +294,11 @@ function getModalImages(modalId) {
                 "images/mdad/create.png",
                 "images/mdad/account.png",
                 "images/mdad/crop.png"
+            ];
+        }else if (modalId === 'haiprojectModal') { 
+            window.modalImageData[modalId] = [
+                'images/hai/home.png',
+                'images/hai/query.png'
             ];
         }
         window.modalImageData[modalId].currentIndex = 0; // Start at the first image

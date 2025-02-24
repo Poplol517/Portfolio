@@ -30,8 +30,8 @@
             <a href="#about" class="btn">About Me</a>
         </div>
         <div class="content right">
-            <p>Curious about the work I've done? Check out the Projects page to see some of the exciting projects I've had the privilege to work on!</p>
-            <a href="#experience" class="btn-left">Past Projects</a>
+            <p>Curious about the work I've done? Check out the Experiences page to see my exciting learning journey!</p>
+            <a href="#experience" class="btn-left">Experiences</a>
         </div>
         <div class="content left">
             <p>Have a question or want to connect? Visit the Contact page, and let's get in touch!</p>
@@ -264,9 +264,9 @@
     <section id="experience" class="section">
         <h2 id="experience-title">Past Experience</h2>
         <div class="timeline">
-            <div class="timeline-item right" id="mdad-project">
+            <div class="timeline-item left" id="mdad-project">
                 <div class="timeline-content">
-                    <img src="images/mdad/mdad_icon.png" alt="MDAD Icon" class="project-icon">
+                    <img src="images/mdad/mdad_icon.png" alt="MDAD Icon" class="project-icon" style="width:225px;  padding-left:15px;"> 
                     <h3>First Mobile Application Project (Internship Sharing)</h3>
                     <h4>Coursework | Oct 2024- Feb 2025</h4>
                     <p>Developed an fully working Internship Sharing App in Andriod Studios</p>
@@ -300,14 +300,61 @@
                             </div>
                         </div>
                         <h4>Coursework | Oct 2023- Feb 2024</h4>
-                        <p>Developed an fully working Sell & Swap website using .NET7, SQL and multiple other programming laguages.</p>
+                        <p>Developed an fully working mobile application allowing </p>
                         <h4>Project Deliverables</h4>
                         <ul>
-                            <li>User Input Data is stored in SQL Server properly</li>
+                            <li>Utilized PHP to send data to MySQL for proper data storage</li>
                             <li>CRUD functions are working properly</li>
+                            <li>Styled the mobile application with Material Design 3 and Google Andriod Materials</li>
                         </ul>
-                        <a href="https://github.com/Poplol517/SellSwapPE02" target="_blank" class="social-icon">
-                            <i class="fab fa-github"></i>  Click here to view project repository
+                        <a href="https://github.com/Poplol517/IntershipSharingApp" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>  Click here to view project repository for source code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item right" id="hai-project">
+                <div class="timeline-content">
+                    <img src="images/hai/HAI.png" alt="MDAD Icon" class="project-icon" style="width:225px;  padding-left:15px;"> 
+                    <h3>Hello AI (HAI) </h3>
+                    <h4>Personal Project | Dec 2024</h4>
+                    <p>Hello AI is a AI chrome extention made for text summarization</p>
+                    <h4 class="click-more" onclick="openProjectModal()"> Click To Find Out More</h4>
+                </div>
+            </div>
+    
+            <!-- Popup Modal -->
+            <div id="haiprojectModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Hello AI (HAI) Extention</h3>
+                    <div class="timeline-content" popup = "true">
+                        <div class="gallery-container">
+                            <div class="image-wrapper">
+                                <button class="arrow left-arrow" onclick="prevImage('haiprojectModal')"style="opacity: 1; visibility: visible; position: absolute; left: 0px; height:250px; top:-20px;">❮</button>
+                                <div class="main-image">
+                                    <img id="displayedImage" src="images/hai/home.png" alt="HAI Image">
+                                </div>
+                                <button class="arrow right-arrow" onclick="nextImage('haiprojectModal')"style="opacity: 1; visibility: visible; position: absolute; right: 0;height:250px; top:-20px">❯</button>
+                            </div>
+                            <div class="thumbnail-container">
+                                <div class="thumbnail-row">
+                                    <img class="thumbnail" src="images/hai/home.png" alt="Thumbnail 1" onclick="changeImage('images/hai/home.png')">
+                                    <img class="thumbnail" src="images/hai/query.png" alt="Thumbnail 2" onclick="changeImage('images/hai/query.png')">
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Personal Project | Dec 2024</h4>
+                        <p>Hello AI is a AI chrome extention made for text summarization purposes and is made to participate in the Google AI Chrome Challenge 2024 </p>
+                        <h4>Project Deliverables</h4>
+                        <ul>
+                            <li>Summarises the text based on what the user highlight on the webpage</li>
+                            <li>Utilized Geminai API to help with the summarising of text</li>
+                            <li>Styled the extention with CSS to make it more user friendly</li>
+                        </ul>
+                        <a href="https://github.com/Poplol517/HAI-Extension" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>  Click here to view project repository for source code
                         </a>
                     </div>
                 </div>
