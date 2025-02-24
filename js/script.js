@@ -5,7 +5,7 @@ let socialLinks = document.querySelector('.social-links');  // Get the social li
 let isScrolling = false;   // Flag to check if scrolling is in progress
 
 // Set a higher threshold to trigger the animation after a larger scroll
-const scrollTriggerPercentage = 70; // Increase the required scroll percentage to 70%
+const scrollTriggerPercentage = 50; // Increase the required scroll percentage to 70%
 
 window.addEventListener('scroll', function() {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -66,76 +66,7 @@ window.addEventListener('scroll', function() {
         isScrolling = false;  // Reset the flag after scrolling stops
     }, 150); // Delay for 150ms to detect stop
 });
-// Function to detect the background color of sections and change navbar theme
-function changeNavbarTheme() {
-    const navbar = document.querySelector('.navbar');
-    const logo = document.querySelector('.logo'); // Get the logo
-    const sections = document.querySelectorAll('section');
-    
-    // Offset for smooth section detection
-    let scrollPosition = window.scrollY + 200; // Change this offset based on your needs
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-        
-        // Check if the current scroll position is within the section's bounds
-        if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
-            // Detect the background color of the section
-            const sectionBgColor = window.getComputedStyle(section).backgroundColor;
-            
-            // If the background color is dark, apply dark navbar theme
-            if (isDarkBackground(sectionBgColor)) {
-                navbar.classList.add('navbar-dark');
-                navbar.classList.remove('navbar-light');
-            } else {
-                navbar.classList.add('navbar-light');
-                navbar.classList.remove('navbar-dark');
-            }
-        }
-    });
-}
 
-// Function to check if the background color is dark
-function isDarkBackground(color) {
-    const rgb = color.match(/\d+/g);
-    const r = parseInt(rgb[0]);
-    const g = parseInt(rgb[1]);
-    const b = parseInt(rgb[2]);
-
-    const brightness = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    return brightness < 128;
-}
-
-// Listen for the scroll event to update the navbar theme
-window.addEventListener('scroll', changeNavbarTheme);
-
-// Initial theme update when the page loads
-changeNavbarTheme();
-
-function animateLeftRightLeft(elements) {
-    const leftElements = document.querySelectorAll('.left');
-    const rightElements = document.querySelectorAll('.right');
-
-    let index = 0;
-
-    // Animate left, right, left in order
-    const sequence = [
-        { elements: leftElements, delay: 0 },
-        { elements: rightElements, delay: 800 }, // Delay for right elements
-        { elements: leftElements, delay: 6500 }, // Delay for second left elements
-    ];
-
-    sequence.forEach(({ elements, delay }, seqIndex) => {
-        setTimeout(() => {
-            elements.forEach((element, elIndex) => {
-                setTimeout(() => {
-                    element.classList.add('visible');  // Add visible class to trigger fade-in effect
-                }, elIndex * 1500); // Each element fades in with 1.5s delay
-            });
-        }, delay); // Delay the entire sequence
-    });
-}
 
 // Function to animate progress bars from 0% to the target value
 function animateProgressBars() {
@@ -177,6 +108,68 @@ document.addEventListener("DOMContentLoaded", function() {
     tabs[0].click();
 });
 
+// Get the modal and the project entry
+// Get the modals
+let fullsdModal = document.getElementById("projectModal");
+let iotProjectModal = document.getElementById("iotprojectModal");
+let aimlProjectModal = document.getElementById("aimlprojectModal");
+let mdadProjectModal = document.getElementById("mdadprojectModal");
+
+// Get the project entries
+let fullsdProjectEntry = document.getElementById("sell-swap-project");
+let iotProjectEntry = document.getElementById("smart-home-project");
+let aimlProjectEntry = document.getElementById("aiml-project");
+let mdadProjectEntry = document.getElementById("mdad-project");
+
+// Get the close buttons for both modals
+let closeBtns = document.getElementsByClassName("close");
+
+// Function to open the correct modal
+function openProjectModal(modal) {
+    modal.style.display = "block";
+}
+
+// When the user clicks on the Sell & Swap project entry, open the fullsdModal
+fullsdProjectEntry.addEventListener("click", function() {
+    openProjectModal(fullsdModal);
+});
+
+// When the user clicks on the Smart Home project entry, open the iotProjectModal
+iotProjectEntry.addEventListener("click", function() {
+    openProjectModal(iotProjectModal);
+});
+
+aimlProjectEntry.addEventListener("click", function() {
+    openProjectModal(aimlProjectModal);
+});
+
+mdadProjectEntry.addEventListener("click", function() {
+    openProjectModal(mdadProjectModal);
+});
+
+// When the user clicks on <span> (x), close the corresponding modal
+Array.from(closeBtns).forEach(function(closeBtn) {
+    closeBtn.addEventListener("click", function() {
+        closeBtn.closest('.modal').style.display = "none";
+    });
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.addEventListener("click", function(event) {
+    if (event.target == fullsdModal) {
+        fullsdModal.style.display = "none";
+    }
+    if (event.target == iotProjectModal) {
+        iotProjectModal.style.display = "none";
+    }
+    if (event.target == aimlProjectModal) {
+        aimlProjectModal.style.display = "none";
+    }
+    if (event.target == mdadProjectModal) {
+        mdadProjectModal.style.display = "none";
+    }
+});
+
 
 
 window.onload = function() {
@@ -202,27 +195,19 @@ function animateOnScroll() {
     const leftElements = document.querySelectorAll('.left');
     const rightElements = document.querySelectorAll('.right');
 
-    leftElements.forEach((element) => {
+    leftElements.forEach((element, index) => {
         if (isInViewport(element)) {
-            element.classList.add('visible'); // Add class when in viewport
+            setTimeout(() => {
+                element.classList.add('visible'); // Add class when in viewport
+            }, index * 100); // Decrease delay to make the items appear faster
         }
     });
 
-    rightElements.forEach((element) => {
+    rightElements.forEach((element, index) => {
         if (isInViewport(element)) {
-            element.classList.add('visible'); // Add class when in viewport
-        }
-    });
-}
-
-// Function to animate progress bars on scroll
-function animateProgressBarsOnScroll() {
-    const progressBars = document.querySelectorAll('.progress');
-
-    progressBars.forEach((bar) => {
-        if (isInViewport(bar)) {
-            const progressValue = bar.getAttribute('data-progress');
-            bar.style.width = progressValue; // Animate progress bar when it enters view
+            setTimeout(() => {
+                element.classList.add('visible'); // Add class when in viewport
+            }, index * 100); // Decrease delay to make the items appear faster
         }
     });
 }
@@ -230,13 +215,11 @@ function animateProgressBarsOnScroll() {
 // Event listener for scrolling
 window.addEventListener("scroll", () => {
     animateOnScroll();
-    animateProgressBarsOnScroll();
 });
 
 // Trigger animation for elements already in view on page load
 document.addEventListener("DOMContentLoaded", () => {
     animateOnScroll();
-    animateProgressBarsOnScroll();
 });
 
 document.querySelector(".scroll-link").addEventListener("click", function(event) {
@@ -248,3 +231,64 @@ document.querySelector(".scroll-link").addEventListener("click", function(event)
         behavior: "smooth" // Enables smooth scrolling
     });
 });
+
+// Function to handle image navigation and change for each modal
+function changeImage(src, modalId) {
+    document.querySelector(`#${modalId} #displayedImage`).src = src;
+    const modalImages = getModalImages(modalId);
+    modalImages.currentIndex = modalImages.indexOf(src);
+}
+
+function prevImage(modalId) {
+    const modalImages = getModalImages(modalId);
+    modalImages.currentIndex = (modalImages.currentIndex - 1 + modalImages.length) % modalImages.length;
+    document.querySelector(`#${modalId} #displayedImage`).src = modalImages[modalImages.currentIndex];
+}
+
+function nextImage(modalId) {
+    const modalImages = getModalImages(modalId);
+    modalImages.currentIndex = (modalImages.currentIndex + 1) % modalImages.length;
+    document.querySelector(`#${modalId} #displayedImage`).src = modalImages[modalImages.currentIndex];
+}
+
+function getModalImages(modalId) {
+    // Store images for each modal separately
+    if (!window.modalImageData) window.modalImageData = {};
+
+    if (!window.modalImageData[modalId]) {
+        if (modalId === 'iotprojectModal') {
+            window.modalImageData[modalId] = [
+                'images/iotp/system_diagram.png',
+                'images/iotp/dashboard.png',
+                'images/iotp/flask_app.png',
+                'images/iotp/mqtt.png'
+            ];
+        } else if (modalId === 'projectModal') {
+            window.modalImageData[modalId] = [
+                'images/fullsd/fullsd_home.png',
+                'images/fullsd/fullsd_buy.png',
+                'images/fullsd/fullsd_chat.png',
+                'images/fullsd/fullsd_create.png',
+                'images/fullsd/fullsd_offer_history.png',
+                'images/fullsd/fullsd_approve_reject.png'
+            ];
+        } else if (modalId === 'aimlprojectModal') {
+            window.modalImageData[modalId] = [
+                'images/aiml/model_layer.png',
+                'images/aiml/2Dmodel_training.png',
+                'images/aiml/2Dmodel_training_graph.png'
+            ];
+        } else if (modalId === 'mdadprojectModal') { 
+            window.modalImageData[modalId] = [
+                'images/mdad/home.png',
+                'images/mdad/communities.png',
+                'images/mdad/chat.png',
+                "images/mdad/create.png",
+                "images/mdad/account.png",
+                "images/mdad/crop.png"
+            ];
+        }
+        window.modalImageData[modalId].currentIndex = 0; // Start at the first image
+    }
+    return window.modalImageData[modalId]; // <-- this was outside of the function block
+}

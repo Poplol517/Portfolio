@@ -15,7 +15,7 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about" >About</a></li>
-            <li><a href=project.html>Projects</a></li>
+            <li><a href=#experience>Experiences</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -31,7 +31,7 @@
         </div>
         <div class="content right">
             <p>Curious about the work I've done? Check out the Projects page to see some of the exciting projects I've had the privilege to work on!</p>
-            <a href="project.html" class="btn-left">Past Projects</a>
+            <a href="#experience" class="btn-left">Past Projects</a>
         </div>
         <div class="content left">
             <p>Have a question or want to connect? Visit the Contact page, and let's get in touch!</p>
@@ -170,7 +170,7 @@
                             <div class="skill-container">
                                 <label class="skill-label">Python Programming</label>
                                 <div class="progress-bar">
-                                    <div class="progress" data-progress="80%"></div>
+                                    <div class="progress" data-progress="70%"></div>
                                 </div>
                             </div>
                         </td>
@@ -180,7 +180,7 @@
                             <div class="skill-container">
                                 <label class="skill-label">C++ Programming</label>
                                 <div class="progress-bar">
-                                    <div class="progress" data-progress="70%"></div>
+                                    <div class="progress" data-progress="65%"></div>
                                 </div>
                             </div>
                         </td>
@@ -190,7 +190,7 @@
                             <div class="skill-container">
                                 <label class="skill-label">Java Programming</label>
                                 <div class="progress-bar">
-                                    <div class="progress" data-progress="85%"></div>
+                                    <div class="progress" data-progress="80%"></div>
                                 </div>
                             </div>
                         </td>
@@ -200,7 +200,7 @@
                             <div class="skill-container">
                                 <label class="skill-label">HyperText Markup Language (HTML) Programming</label>
                                 <div class="progress-bar">
-                                    <div class="progress" data-progress="80%"></div>
+                                    <div class="progress" data-progress="65%"></div>
                                 </div>
                             </div>
                         </td>
@@ -210,7 +210,7 @@
                             <div class="skill-container">
                                 <label class="skill-label">MySQL</label>
                                 <div class="progress-bar">
-                                    <div class="progress" data-progress="80%"></div>
+                                    <div class="progress" data-progress="70%"></div>
                                 </div>
                             </div>
                         </td>
@@ -220,7 +220,7 @@
                             <div class="skill-container">
                                 <label class="skill-label">JavaScript Programming</label>
                                 <div class="progress-bar">
-                                    <div class="progress" data-progress="70%"></div>
+                                    <div class="progress" data-progress="60%"></div>
                                 </div>
                             </div>
                         </td>
@@ -230,7 +230,7 @@
                             <div class="skill-container">
                                 <label class="skill-label">User Interface (UI) Design</label>
                                 <div class="progress-bar">
-                                    <div class="progress" data-progress="65%"></div>
+                                    <div class="progress" data-progress="55%"></div>
                                 </div>
                             </div>
                         </td>
@@ -240,7 +240,7 @@
                             <div class="skill-container">
                                 <label class="skill-label">User Experience (UX) Design</label>
                                 <div class="progress-bar">
-                                    <div class="progress" data-progress="65%"></div>
+                                    <div class="progress" data-progress="55%"></div>
                                 </div>
                             </div>
                         </td>
@@ -250,7 +250,7 @@
                             <div class="skill-container">
                                 <label class="skill-label">Code Debugging</label>
                                 <div class="progress-bar">
-                                    <div class="progress" data-progress="75%"></div>
+                                    <div class="progress" data-progress="70%"></div>
                                 </div>
                             </div>
                         </td>
@@ -259,6 +259,216 @@
             </div>
         </div>
     </section>
+
+    <!-- Past Experience Section -->
+    <section id="experience" class="section">
+        <h2 id="experience-title">Past Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item right" id="mdad-project">
+                <div class="timeline-content">
+                    <img src="images/mdad/mdad_icon.png" alt="MDAD Icon" class="project-icon">
+                    <h3>First Mobile Application Project (Internship Sharing)</h3>
+                    <h4>Coursework | Oct 2024- Feb 2025</h4>
+                    <p>Developed an fully working Internship Sharing App in Andriod Studios</p>
+                    <h4 class="click-more" onclick="openProjectModal()"> Click To Find Out More</h4>
+                </div>
+            </div>
+    
+            <!-- Popup Modal -->
+            <div id="mdadprojectModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>First Mobile Application Project (Internship Sharing)</h3>
+                    <div class="timeline-content" popup = "true">
+                        <div class="gallery-container">
+                            <div class="image-wrapper">
+                                <button class="arrow left-arrow" onclick="prevImage('mdadprojectModal')"style="opacity: 1; visibility: visible; position: absolute; left: 0px; height:250px; top:-20px;">❮</button>
+                                <div class="main-image">
+                                    <img id="displayedImage" src="images/mdad/home.png" alt="Smart Home Image">
+                                </div>
+                                <button class="arrow right-arrow" onclick="nextImage('mdadprojectModal')"style="opacity: 1; visibility: visible; position: absolute; right: 0;height:250px; top:-20px">❯</button>
+                            </div>
+                            <div class="thumbnail-container">
+                                <div class="thumbnail-row">
+                                    <img class="thumbnail" src="images/mdad/home.png" alt="Thumbnail 1" onclick="changeImage('images/mdad/home.png')">
+                                    <img class="thumbnail" src="images/mdad/communities.png" alt="Thumbnail 2" onclick="changeImage('images/mdad/communities.png')">
+                                    <img class="thumbnail" src="images/mdad/chat.png" alt="Thumbnail 3" onclick="changeImage('images/mdad/chat.png')">
+                                    <img class="thumbnail" src="images/mdad/create.png" alt="Thumbnail 4" onclick="changeImage('images/mdad/create.png')">
+                                    <img class="thumbnail" src="images/mdad/account.png" alt="Thumbnail 4" onclick="changeImage('images/mdad/account.png')">
+                                    <img class="thumbnail" src="images/mdad/crop.png" alt="Thumbnail 4" onclick="changeImage('images/mdad/crop.png')">
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Coursework | Oct 2023- Feb 2024</h4>
+                        <p>Developed an fully working Sell & Swap website using .NET7, SQL and multiple other programming laguages.</p>
+                        <h4>Project Deliverables</h4>
+                        <ul>
+                            <li>User Input Data is stored in SQL Server properly</li>
+                            <li>CRUD functions are working properly</li>
+                        </ul>
+                        <a href="https://github.com/Poplol517/SellSwapPE02" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>  Click here to view project repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Work Experience Entry -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="infinite_slider" style="
+                        --width: 602px; 
+                        --height: 195px;
+                        --quantity: 2;
+                    ">
+                        <div class="list">
+                            <div class="item" style="--position: 1"><img src="images/micron/micron.png" alt=""></div>
+                        </div>
+                    </div>
+                    <h3>WET Manufacturing Intern</h3>
+                    <h4>Micron Technologies | Apr 2024 - Aug 2023</h4>
+                    <p>As an intern at Micron, I support colleagues by developing SOPs, coordinating tasks, and enhancing workplace safety while deepening my understanding of the semiconductor manufacturing industry and exploring IoT sensors' role in industrial operations.</p>
+                </div>
+            </div>
+    
+            <!-- Project Entry -->
+            <div class="timeline-item right" id="sell-swap-project">
+                <div class="timeline-content">
+                    <img src="images/fullsd/fullsd_icon.png" alt="Full Stack App Icon" class="project-icon">
+                    <h3>First Full Stack Website Project (Sell & Swap)</h3>
+                    <h4>Coursework | Oct 2023- Feb 2024</h4>
+                    <p>Developed an fully working Sell & Swap website using .NET7, SQL and multiple other programming laguages.</p>
+                    <h4 class="click-more" onclick="openProjectModal()"> Click To Find Out More</h4>
+                </div>
+            </div>
+    
+            <!-- Popup Modal -->
+            <div id="projectModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Internet of Things Project (Smart Home)</h3>
+                    <div class="timeline-content" popup = "true">
+                        <div class="gallery-container">
+                            <div class="image-wrapper">
+                                <button class="arrow left-arrow" onclick="prevImage('projectModal')"style="opacity: 1; visibility: visible; position: absolute; left: 0px; height:250px; top:-20px;">❮</button>
+                                <div class="main-image">
+                                    <img id="displayedImage" src="images/fullsd/fullsd_home.png" alt="Smart Home Image">
+                                </div>
+                                <button class="arrow right-arrow" onclick="nextImage('projectModal')"style="opacity: 1; visibility: visible; position: absolute; right: 0;height:250px; top:-20px">❯</button>
+                            </div>
+                            <div class="thumbnail-container">
+                                <div class="thumbnail-row">
+                                    <img class="thumbnail" src="images/fullsd/fullsd_home.png" alt="Thumbnail 1" onclick="changeImage('images/fullsd/fullsd_home.png')">
+                                    <img class="thumbnail" src="images/fullsd/fullsd_buy.png" alt="Thumbnail 2" onclick="changeImage('images/fullsd/fullsd_buy.png')">
+                                    <img class="thumbnail" src="images/fullsd/fullsd_chat.png" alt="Thumbnail 3" onclick="changeImage('images/fullsd/fullsd_chat.png')">
+                                    <img class="thumbnail" src="images/fullsd/fullsd_create.png" alt="Thumbnail 4" onclick="changeImage('images/fullsd/fullsd_create.png')">
+                                    <img class="thumbnail" src="images/fullsd/fullsd_offer_history.png" alt="Thumbnail 4" onclick="changeImage('images/fullsd/fullsd_offer_history.png')">
+                                    <img class="thumbnail" src="images/fullsd/fullsd_approve_reject.png" alt="Thumbnail 4" onclick="changeImage('images/fullsd/fullsd_approve_reject.png')">
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Coursework | Oct 2023- Feb 2024</h4>
+                        <p>Developed an fully working Sell & Swap website using .NET7, SQL and multiple other programming laguages.</p>
+                        <h4>Project Deliverables</h4>
+                        <ul>
+                            <li>User Input Data is stored in SQL Server properly</li>
+                            <li>CRUD functions are working properly</li>
+                        </ul>
+                        <a href="https://github.com/Poplol517/SellSwapPE02" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>  Click here to view project repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Project Entry -->
+            <div class="timeline-item left" id="smart-home-project">
+                <div class="timeline-content">
+                    <img src="images/iotp/iotp_icon.png" alt="IOTP Icon" class="project-icon">
+                    <h3>Internet of Things Project (Smart Home)</h3>
+                    <h4>Coursework | Oct 2023- Feb 2024</h4>
+                    <p>Developed an smart home system using Raspberry Pi</p>
+                    <h4 class="click-more" onclick="openProjectModal()"> Click To Find Out More</h4>
+                </div>
+            </div>
+    
+            <!-- Popup Modal -->
+            <div id="iotprojectModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Internet of Things Project (Smart Home)</h3>
+                    <div class="timeline-content" popup = "true">
+                        <div class="gallery-container">
+                            <div class="image-wrapper">
+                                <button class="arrow left-arrow" onclick="prevImage('iotprojectModal')"style="opacity: 1; visibility: visible; position: absolute; left: 0px; height:250px; top:-20px;">❮</button>
+                                <div class="main-image">
+                                    <img id="displayedImage" src="images/iotp/system_diagram.png" alt="Smart Home Image">
+                                </div>
+                                <button class="arrow right-arrow" onclick="nextImage('iotprojectModal')"style="opacity: 1; visibility: visible; position: absolute; right: 0;height:250px; top:-20px">❯</button>
+                            </div>
+                            <div class="thumbnail-container">
+                                <div class="thumbnail-row">
+                                    <img class="thumbnail" src="images/iotp/system_diagram.png" alt="Thumbnail 1" onclick="changeImage('images/iotp/system_diagram.png')">
+                                    <img class="thumbnail" src="images/iotp/dashboard.png" alt="Thumbnail 2" onclick="changeImage('images/iotp/dashboard.png')">
+                                    <img class="thumbnail" src="images/iotp/flask_app.png" alt="Thumbnail 3" onclick="changeImage('images/iotp/flask_app.png')">
+                                    <img class="thumbnail" src="images/iotp/mqtt.png" alt="Thumbnail 4" onclick="changeImage('images/iotp/mqtt.png')">
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Coursework | Oct 2023- Feb 2024</h4>
+                        <h4>Problem Statement</h4>
+                        <p>The real estate developer is seeking a smart home system for their condominium project with specific features to enhance the residents' comfort, convenience, and energy efficiency.  
+                            Through the use of smart devices, he/she would be able to remotely access the home appliances.</p>
+                        <h4>Project Deliverables</h4>
+                        <li>Flask App is able to control the room light and adjust air-conditioner temperature </li>
+                        <li>Gafarna for data visualisation </li>
+                        <li>Deployed MQTT for real-time monitoring of temperaturen and humidity </li>
+
+                    </div>
+                </div>
+            </div>
+    
+            <div class="timeline-item right" id="aiml-project">
+                <div class="timeline-content">
+                    <img src="images/aiml/aiml_icon.png" alt="AIML Icon" class="project-icon" style="width:225px;  padding-left:15px;">
+                    <h3>Artifical Intelligence Marchine Learning (Image Regconition)</h3>
+                    <h4>Coursework | Oct 2023- Feb 2024</h4>
+                    <p>Trained a AI model to predict among 5 different types of birds </p>
+                    <h4 class="click-more" onclick="openProjectModal()"> Click To Find Out More</h4>
+                </div>
+            </div>
+    
+            <!-- Popup Modal -->
+            <div id="aimlprojectModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Artifical Intelligence Marchine Learning (Image Regconition)</h3>
+                    <div class="timeline-content" popup = "true">
+                        <div class="gallery-container">
+                            <div class="image-wrapper">
+                                <button class="arrow left-arrow" onclick="prevImage('aimlprojectModal')"style="opacity: 1; visibility: visible; position: absolute; left: 0px; height:250px; top:-20px;">❮</button>
+                                <div class="main-image">
+                                    <img id="displayedImage" src="images/aiml//model_layer.png" alt="Smart Home Image">
+                                </div>
+                                <button class="arrow right-arrow" onclick="nextImage('aimlprojectModal')"style="opacity: 1; visibility: visible; position: absolute; right: 0;height:250px; top:-20px">❯</button>
+                            </div>
+                            <div class="thumbnail-container">
+                                <div class="thumbnail-row">
+                                    <img class="thumbnail" src="images/aiml/model_layer.png" alt="Thumbnail 1" onclick="changeImage('images/aiml/model_layer.png')">
+                                    <img class="thumbnail" src="images/aiml/2Dmodel_training.png" alt="Thumbnail 2" onclick="changeImage('images/aiml/2Dmodel_training.png')">
+                                    <img class="thumbnail" src="images/aiml/2Dmodel_training_graph.png" alt="Thumbnail 3" onclick="changeImage('images/aiml/2Dmodel_training_graph.png')">
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Coursework | Oct 2023- Feb 2024</h4>
+                        <h4>Project Deliverables</h4>
+                        <li>Trained 2 different model for comparison (CNN 2D model and VGG) </li>
+                        <li>Model is able to predict with 89% (close to 90%) confidence level  </li>
+                        <li>Deployed Image classification API services to deloy the trained model in a flask app</li>
+
+                    </div>
+                </div>
+            </div>
+    </section>    
 
     <!-- Contact Section -->
     <section id="contact" class="section">

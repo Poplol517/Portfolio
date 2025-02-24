@@ -20,9 +20,9 @@ body {
 /* Navigation Bar */
 .navbar {
     display: flex;
+    background-color: #f4f4f4;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent; /* Transparent background */
     padding: 15px 30px;
     position: fixed;
     top: 0;
@@ -485,4 +485,263 @@ th {
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
+}
+
+
+/* Timeline Section */
+.timeline {
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* Timeline vertical line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #ccc;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Timeline items */
+.timeline-item {
+    padding: 20px;
+    position: relative;
+    width: 50%;
+}
+
+/* Left side */
+.timeline-item.left {
+    right:-40.5%;
+    text-align: right;
+    z-index:2;
+}
+
+/* Right side */
+.timeline-item.right {
+    left: 50%;
+    z-index:2;
+}
+
+/* Timeline content box */
+.timeline-content {
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: left;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-content[popup="true"] {
+    transform: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    height: 600px; /* Set a fixed height */
+    overflow-y: auto; /* Make it scrollable when the content exceeds the height */
+}
+
+
+.timeline-content p {
+    font-size: 15px; /* Adjust this value to make the text smaller */
+    line-height: 1.5; /* Optional: Adjust the line height for readability */
+}
+
+/* Circle markers */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    width: 15px;
+    height: 15px;
+    background-color: #3498db;
+    border-radius: 50%;
+    border: 3px solid white;
+    z-index: 1;
+}
+
+/* Left marker position */
+.timeline-item.left::before {
+    right: -10px;
+}
+
+/* Right marker position */
+.timeline-item.right::before {
+    left: -10px;
+}
+
+/* Timeline Item */
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 1s ease, transform 0.5s ease; /* Faster transition */
+}
+
+.click-more {
+    color: #007bff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    animation: bounce 1.5s infinite;
+}
+
+.click-more:hover {
+    color: #0056b3;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Position fixed to the screen */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    padding-top: 0; /* Remove extra padding */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 0; /* Remove margin */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Width of the modal */
+    max-width: 600px;
+    border-radius: 10px;
+    position: fixed; /* Position fixed to the screen */
+    top: 50%; /* Align it vertically to the center */
+    left: 50%; /* Align it horizontally to the center */
+    transform: translate(-50%, -50%); /* Use transform to perfectly center */
+    z-index: 4; /* Ensure it's on top of other content */
+}
+
+/* Modal Content Text */
+.modal-content p, .modal-content li {
+    font-family: Arial, sans-serif; /* Or your preferred font */
+    font-size: 16px; /* Adjust to your preferred font size */
+    line-height: 1.5; /* For better readability */
+    margin: 10px 0; /* Optional: adjust spacing between list items and paragraphs */
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+.infinite_slider{
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 5% 95%, /* to change the amount of content to be shown / hidden change the value here */
+        transparent
+    );
+    z-index: 2;
+}
+
+.infinite_slider .list{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity)); /* allow the image to auto resize to the width set in the html */
+}
+
+.infinite_slider .list .item{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    /* infinite is used to let it run infinite time */
+    animation: autoRunLeft 10s linear infinite; 
+    /* using a single line of calculation to differentiate the different position of each item using pre defined variable in the html (CASE SENSITIVE)*/
+    /*!important is used so that redeclaring the animation delay for the reverse play is not needed also to prevent calculation being ignored*/
+    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1 ) )!important; 
+    transition: filter 0.5s;
+}
+
+@keyframes autoRunLeft{
+    from{
+        left: 100%;
+    }
+    to{
+        left: calc(var(--width) * -1 );
+    }
+}
+
+.infinite_slider .list .item img{
+    width: 100%;
+}
+
+.infinite_slider:hover .item{
+    animation-play-state: paused!important;
+    filter:grayscale(1);
+}
+
+.infinite_slider .item:hover{
+    filter: grayscale(0);
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image-wrapper {
+    display: flex;
+    align-items: center;
+}
+.main-image img {
+    width: 100%;
+    max-height: 550px;
+    object-fit: cover;
+    margin: 0 10px;
+}
+.thumbnail-container {
+    margin-top: 20px;
+}
+.thumbnail-row {
+    display: flex;
+    gap: 10px;
+}
+.thumbnail {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+.arrow {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
