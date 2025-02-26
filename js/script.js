@@ -5,7 +5,7 @@ let socialLinks = document.querySelector('.social-links');  // Get the social li
 let isScrolling = false;   // Flag to check if scrolling is in progress
 
 // Set a higher threshold to trigger the animation after a larger scroll
-const scrollTriggerPercentage = 50; // Increase the required scroll percentage to 70%
+const scrollTriggerPercentage = 20; // Increase the required scroll percentage to 70%
 
 window.addEventListener('scroll', function() {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -114,6 +114,7 @@ let iotProjectModal = document.getElementById("iotprojectModal");
 let aimlProjectModal = document.getElementById("aimlprojectModal");
 let mdadProjectModal = document.getElementById("mdadprojectModal");
 let haiProjectModal = document.getElementById("haiprojectModal");
+let mpProjectModal = document.getElementById("mpprojectModal");
 
 // Get the project entries
 let fullsdProjectEntry = document.getElementById("sell-swap-project");
@@ -121,6 +122,7 @@ let iotProjectEntry = document.getElementById("smart-home-project");
 let aimlProjectEntry = document.getElementById("aiml-project");
 let mdadProjectEntry = document.getElementById("mdad-project");
 let haiProjectEntry = document.getElementById("hai-project");
+let mpProjectEntry = document.getElementById("mp-project");
 
 // Get the close buttons for both modals
 let closeBtns = document.getElementsByClassName("close");
@@ -152,6 +154,10 @@ haiProjectEntry.addEventListener("click", function() {
     openProjectModal(haiProjectModal);
 });
 
+mpProjectEntry.addEventListener("click", function() {
+    openProjectModal(mpprojectModal);
+});
+
 // When the user clicks on <span> (x), close the corresponding modal
 Array.from(closeBtns).forEach(function(closeBtn) {
     closeBtn.addEventListener("click", function() {
@@ -175,6 +181,9 @@ window.addEventListener("click", function(event) {
     }
     if (event.target == haiProjectModal) {
         haiProjectModal.style.display = "none";
+    }
+    if (event.target == mpProjectModal) {
+        mpProjectModal.style.display = "none";
     }
 });
 
@@ -299,6 +308,17 @@ function getModalImages(modalId) {
             window.modalImageData[modalId] = [
                 'images/hai/home.png',
                 'images/hai/query.png'
+            ];
+        }
+        else if (modalId === 'mpprojectModal') { 
+            window.modalImageData[modalId] = [
+                'images/mp/hardware.png',
+                'images/mp/hardware_circuit.png',
+                'images/mp/hardware_circuit2.png',
+                'images/mp/system_diagram.png',
+                'images/mp/flask.png',
+                'images/mp/dashboard.png',
+                'images/mp/2d_3d_model.png'
             ];
         }
         window.modalImageData[modalId].currentIndex = 0; // Start at the first image

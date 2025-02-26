@@ -218,6 +218,16 @@
                     <tr>
                         <td>
                             <div class="skill-container">
+                                <label class="skill-label">SQL Server</label>
+                                <div class="progress-bar">
+                                    <div class="progress" data-progress="70%"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="skill-container">
                                 <label class="skill-label">JavaScript Programming</label>
                                 <div class="progress-bar">
                                     <div class="progress" data-progress="60%"></div>
@@ -264,6 +274,56 @@
     <section id="experience" class="section">
         <h2 id="experience-title">Past Experience</h2>
         <div class="timeline">
+
+            <div class="timeline-item right" id="mp-project">
+                <div class="timeline-content">
+                    <img src="images/mp/mp_icon.png" alt="MP Icon" class="project-icon" style="width:225px;  padding-left:15px;"> 
+                    <h3>Location determining mesh network</h3>
+                    <h4>Coursework | Oct 2024- Feb 2025</h4>
+                    <p>Developed an fully working location determinding mesh network utilising ESP32-S3 and Xiao Seeed nrf52840</p>
+                    <h4 class="click-more" onclick="openProjectModal()"> Click To Find Out More</h4>
+                </div>
+            </div>
+            <!-- Popup Modal -->
+            <div id="mpprojectModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Location determining mesh network</h3>
+                    <div class="timeline-content" popup = "true">
+                        <div class="gallery-container">
+                            <div class="image-wrapper">
+                                <button class="arrow left-arrow" onclick="prevImage('mpprojectModal')">❮</button>
+                                <div class="main-image">
+                                    <img id="displayedImage" src="images/mp/hardware.png" alt="MP Hardware Image">
+                                </div>
+                                <button class="arrow right-arrow" onclick="nextImage('mpprojectModal')">❯</button>
+                            </div>
+                            <div class="thumbnail-container">
+                                <div class="thumbnail-row">
+                                    <img class="thumbnail" src="images/mp/hardware.png" alt="Thumbnail 1" onclick="changeImage('images/mp/hardware.png')">
+                                    <img class="thumbnail" src="images/mp/hardware_circuit.png" alt="Thumbnail 2" onclick="changeImage('images/mp/hardware_circuit.png')">
+                                    <img class="thumbnail" src="images/mp/hardware_circuit2.png" alt="Thumbnail 3" onclick="changeImage('images/mp/hardware_circuit2.png')">
+                                    <img class="thumbnail" src="images/mp/system_diagram.png" alt="Thumbnail 4" onclick="changeImage('images/mp/system_diagram.png')">
+                                    <img class="thumbnail" src="images/mp/flask.png" alt="Thumbnail 5" onclick="changeImage('images/mp/flask.png')">
+                                    <img class="thumbnail" src="images/mp/dashboard.png" alt="Thumbnail 6" onclick="changeImage('images/mp/dashboard.png')">
+                                    <img class="thumbnail" src="images/mp/2d_3d_model.png" alt="Thumbnail 7" onclick="changeImage('images/mp/2d_3d_model.png')">
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Coursework | Oct 2023- Feb 2024</h4>
+                        <p>Developed an fully working location determining mesh network utilising ESP32-S3 and Xiao Seeed nrf52840 </p>
+                        <h4>Project Deliverables</h4>
+                        <ul>
+                            <li>Able to track location of asset and paitents thorugh the monitoring of the 2d/ 3d model display</li>
+                            <li>Able to know paitent has fallen down thorugh the monitoring of the 2d/ 3d model display</li>
+                            <li>Able to monitor differnet agriculture conditions in remote areas through the dashboard</li>
+                            <li>Flask app is made allowing the user to have a easier time configuring the 2d/ 3d display based on the users needs.
+                                Additionally, it allows the user to have a easier time monitoring ESP32-S3 node alive status</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="timeline-item left" id="mdad-project">
                 <div class="timeline-content">
                     <img src="images/mdad/mdad_icon.png" alt="MDAD Icon" class="project-icon" style="width:225px;  padding-left:15px;"> 
@@ -273,7 +333,6 @@
                     <h4 class="click-more" onclick="openProjectModal()"> Click To Find Out More</h4>
                 </div>
             </div>
-    
             <!-- Popup Modal -->
             <div id="mdadprojectModal" class="modal">
                 <div class="modal-content">
@@ -282,11 +341,11 @@
                     <div class="timeline-content" popup = "true">
                         <div class="gallery-container">
                             <div class="image-wrapper">
-                                <button class="arrow left-arrow" onclick="prevImage('mdadprojectModal')"style="opacity: 1; visibility: visible; position: absolute; left: 0px; height:250px; top:-20px;">❮</button>
+                                <button class="arrow left-arrow" onclick="prevImage('mdadprojectModal')">❮</button>
                                 <div class="main-image">
-                                    <img id="displayedImage" src="images/mdad/home.png" alt="Smart Home Image">
+                                    <img id="displayedImage" src="images/mdad/home.png" alt="Mdad Image">
                                 </div>
-                                <button class="arrow right-arrow" onclick="nextImage('mdadprojectModal')"style="opacity: 1; visibility: visible; position: absolute; right: 0;height:250px; top:-20px">❯</button>
+                                <button class="arrow right-arrow" onclick="nextImage('mdadprojectModal')">❯</button>
                             </div>
                             <div class="thumbnail-container">
                                 <div class="thumbnail-row">
@@ -332,11 +391,11 @@
                     <div class="timeline-content" popup = "true">
                         <div class="gallery-container">
                             <div class="image-wrapper">
-                                <button class="arrow left-arrow" onclick="prevImage('haiprojectModal')"style="opacity: 1; visibility: visible; position: absolute; left: 0px; height:250px; top:-20px;">❮</button>
+                                <button class="arrow left-arrow" onclick="prevImage('haiprojectModal')">❮</button>
                                 <div class="main-image">
                                     <img id="displayedImage" src="images/hai/home.png" alt="HAI Image">
                                 </div>
-                                <button class="arrow right-arrow" onclick="nextImage('haiprojectModal')"style="opacity: 1; visibility: visible; position: absolute; right: 0;height:250px; top:-20px">❯</button>
+                                <button class="arrow right-arrow" onclick="prevImage('haiprojectModal')">❯</button>
                             </div>
                             <div class="thumbnail-container">
                                 <div class="thumbnail-row">
@@ -396,11 +455,11 @@
                     <div class="timeline-content" popup = "true">
                         <div class="gallery-container">
                             <div class="image-wrapper">
-                                <button class="arrow left-arrow" onclick="prevImage('projectModal')"style="opacity: 1; visibility: visible; position: absolute; left: 0px; height:250px; top:-20px;">❮</button>
+                                <button class="arrow left-arrow" onclick="prevImage('projectModal')">❮</button>
                                 <div class="main-image">
                                     <img id="displayedImage" src="images/fullsd/fullsd_home.png" alt="Smart Home Image">
                                 </div>
-                                <button class="arrow right-arrow" onclick="nextImage('projectModal')"style="opacity: 1; visibility: visible; position: absolute; right: 0;height:250px; top:-20px">❯</button>
+                                <button class="arrow right-arrow" onclick="nextImage('projectModal')">❯</button>
                             </div>
                             <div class="thumbnail-container">
                                 <div class="thumbnail-row">
@@ -446,11 +505,11 @@
                     <div class="timeline-content" popup = "true">
                         <div class="gallery-container">
                             <div class="image-wrapper">
-                                <button class="arrow left-arrow" onclick="prevImage('iotprojectModal')"style="opacity: 1; visibility: visible; position: absolute; left: 0px; height:250px; top:-20px;">❮</button>
+                                <button class="arrow left-arrow" onclick="prevImage('iotprojectModal')">❮</button>
                                 <div class="main-image">
                                     <img id="displayedImage" src="images/iotp/system_diagram.png" alt="Smart Home Image">
                                 </div>
-                                <button class="arrow right-arrow" onclick="nextImage('iotprojectModal')"style="opacity: 1; visibility: visible; position: absolute; right: 0;height:250px; top:-20px">❯</button>
+                                <button class="arrow right-arrow" onclick="nextImage('iotprojectModal')">❯</button>
                             </div>
                             <div class="thumbnail-container">
                                 <div class="thumbnail-row">
@@ -492,11 +551,11 @@
                     <div class="timeline-content" popup = "true">
                         <div class="gallery-container">
                             <div class="image-wrapper">
-                                <button class="arrow left-arrow" onclick="prevImage('aimlprojectModal')"style="opacity: 1; visibility: visible; position: absolute; left: 0px; height:250px; top:-20px;">❮</button>
+                                <button class="arrow left-arrow" onclick="prevImage('aimlprojectModal')">❮</button>
                                 <div class="main-image">
                                     <img id="displayedImage" src="images/aiml//model_layer.png" alt="Smart Home Image">
                                 </div>
-                                <button class="arrow right-arrow" onclick="nextImage('aimlprojectModal')"style="opacity: 1; visibility: visible; position: absolute; right: 0;height:250px; top:-20px">❯</button>
+                                <button class="arrow right-arrow" onclick="nextImage('aimlprojectModal')">❯</button>
                             </div>
                             <div class="thumbnail-container">
                                 <div class="thumbnail-row">
