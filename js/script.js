@@ -216,7 +216,7 @@ function animateOnScroll() {
         if (isInViewport(element)) {
             setTimeout(() => {
                 element.classList.add('visible'); // Add class when in viewport
-            }, index * 100); // Decrease delay to make the items appear faster
+            }, index * 10); // Decrease delay to make the items appear faster
         }
     });
 
@@ -224,7 +224,7 @@ function animateOnScroll() {
         if (isInViewport(element)) {
             setTimeout(() => {
                 element.classList.add('visible'); // Add class when in viewport
-            }, index * 100); // Decrease delay to make the items appear faster
+            }, index * 10); // Decrease delay to make the items appear faster
         }
     });
 }
@@ -324,4 +324,72 @@ function getModalImages(modalId) {
         window.modalImageData[modalId].currentIndex = 0; // Start at the first image
     }
     return window.modalImageData[modalId]; // <-- this was outside of the function block
+}
+
+let currentImageIndex = 0;
+
+function showBadgeDetails(badgeId) {
+    const badgeDetails = {
+        goodprogress2024: {
+            title: 'Good Progress Award 2024',
+            description: 'Honred to be one of the students who are within the top 10% of their institution’s level and course in terms of improvement in academic performance and have demonstrated good conduct.',
+            images: ['images/goodprogress/good_progress_2024.png']
+        },
+        oracle: {
+            title: 'Oracle Certificate',
+            description: 'Completed Oracle University courses and earned Certificate of Recognition for the module.',
+            images: ['images/oracle/oracle_badge.png', 'images/oracle/oracle_eCertificate.png']
+        },
+        taekwondoChampion: {
+            title: 'Taekwondo Achievements',
+            description: 'National-level champion and multiple gold medalist in Taekwondo events from 2022-2024. Did a Demostration Perfomance for International Taekwondo Masters Open Championship as a memeber of National Demostration Team.',
+            images: ['images/tkd/cca_record.png','images/tkd/colors_2023.png','images/tkd/colors_2024.png','images/tkd/merit_2023.png','images/tkd/merit_2024.jpeg','images/tkd/sports_team_2023.jpeg','images/tkd/masters_demo_cert.png']
+        }
+    };
+
+    const modal = document.getElementById('badgeModal');
+    const badge = badgeDetails[badgeId];
+    currentImageIndex = 0;
+
+    document.getElementById('badgeTitle').innerText = badge.title;
+    document.getElementById('badgeDescription').innerText = badge.description;
+    const badgeImage = document.getElementById('badgeImage');
+    badgeImage.src = badge.images[currentImageIndex];
+    badgeImage.style.maxWidth = '500px';
+    badgeImage.style.maxHeight = '500px';
+    modal.style.display = 'flex';
+
+    document.getElementById('prevImage').onclick = () => navigateImage(badge.images, -1);
+    document.getElementById('nextImage').onclick = () => navigateImage(badge.images, 1);
+
+    const thumbnailsContainer = document.querySelector('.thumbnail-row');
+    thumbnailsContainer.innerHTML = '';
+    thumbnailsContainer.style.display = 'flex';
+    thumbnailsContainer.style.justifyContent = 'center';
+
+    badge.images.forEach((image, index) => {
+        const thumb = document.createElement('img');
+        thumb.className = 'thumbnail';
+        thumb.src = image;
+        thumb.alt = `Thumbnail ${index + 1}`;
+        thumb.style.margin = '0 5px';
+        thumb.onclick = () => navigateImageDirectly(badge.images, index);
+        thumbnailsContainer.appendChild(thumb);
+    });
+}
+
+function navigateImage(images, direction) {
+    currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+    const badgeImage = document.getElementById('badgeImage');
+    badgeImage.src = images[currentImageIndex];
+}
+
+function navigateImageDirectly(images, index) {
+    currentImageIndex = index;
+    const badgeImage = document.getElementById('badgeImage');
+    badgeImage.src = images[currentImageIndex];
+}
+
+function closeBadgeModal() {
+    document.getElementById('badgeModal').style.display = 'none';
 }

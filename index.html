@@ -15,6 +15,7 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about" >About</a></li>
+            <li><a href="#achievements">Achievement</a></li>
             <li><a href=#experience>Experiences</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -37,6 +38,10 @@
             <p>Have a question or want to connect? Visit the Contact page, and let's get in touch!</p>
             <a href="#contact" class="btn">Contact Me</a>
         </div>
+        <div class="content right">
+            <p>Want to know what are some of my achivements? Visit the Achivement page, and see what I have accomplished</p>
+            <a href="#achievements" class="btn-left">Achivements</a>
+        </div>
     </section>
 
     <!-- About Me Section -->
@@ -45,23 +50,27 @@
         <div class="profile-pic-container">
             <img src="images/me.jpg" alt="My Photo" class="profile-pic">
             <div class="text-content">
-                <h3>I am a Computer Engineering Student Athlete with too many hobbies and interests</h3>
+                <h3>I am a Final Year Computer Engineering Student Athlete in Temasek Polytechnic with with too many hobbies and interests</h3>
                 <ul id="description">
                     <li> 
-                        I am an aspiring computer engineer hoping to use my knowledge learnt from my studies to develop more smart solutions that benefit people's daily lives
-                        <i class="fas fa-laptop-code icon"></i>
+                        I am an aspiring computer engineer hoping to use my knowledge learnt from my studies to develop more smart solutions that benefit people's daily lives!
+                        <i class="fas fa-laptop-code icon" style="color: blue;"></i>
+                    </li>
+                    <li> 
+                        I also enjoy coding sometimes I would spend my free time exploring new langauages to further enhance my coding skill sets!
+                        <i class="fas fa-code-branch icon" style="color: rgb(18, 196, 18);"></i>
                     </li>
                     <li>
                         I am a great team worker! Just ask my past project group-mates
-                        <i class="fas fa-users icon"></i> 
+                        <i class="fas fa-users icon" style="color: rgb(116, 18, 196);"></i> 
                     </li>
                     <li>
                         I enjoy traveling to different countries to gain exposure in life!
-                        <i class="fas fa-plane-departure icon"></i> 
+                        <i class="fas fa-plane-departure icon" style="color: rgb(219, 21, 21);"></i> 
                     </li>
                     <li>
-                        I enjoy doing sports! Some of the sports I have done are Wushu, Taekwondo, Basketball, and Badminton.
-                        <i class="fas fa-basketball-ball icon"></i> 
+                        I enjoy doing sports! Some of the sports I have enjoyed and actively participated in are Wushu, Taekwondo, Basketball, and Badminton!
+                        <i class="fas fa-basketball-ball icon" style="color: rgb(219, 150, 21);"></i> 
                     </li>
                 </ul>
             </div>
@@ -270,6 +279,41 @@
         </div>
     </section>
 
+    <section id="achievements" class="section">
+        <h2 id="title">My Achievements</h2>
+        <div class="badge-container">
+            <div class="badge" onclick="showBadgeDetails('goodprogress2024')">
+                <img src="images/goodprogress/goodprogress_icon.png" alt="Good Progress 2024 Badge">
+                <p>Good Progress Award 2024</p>
+            </div>
+            <div class="badge" onclick="showBadgeDetails('oracle')">
+                <img src="images/oracle/oracle_icon.png" alt="Oracle Badge">
+                <p>Oracle Certificate</p>
+            </div>
+            <div class="badge" onclick="showBadgeDetails('taekwondoChampion')">
+                <img src="images/tkd/tkd_icon.png" alt="Taekwondo Champion Badge">
+                <p>Taekwondo Achivements</p>
+            </div>
+        </div> 
+    </section>
+    
+    <!-- Badge Details Modal -->
+    <div id="badgeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBadgeModal()">&times;</span>
+            <h3 id="badgeTitle"></h3>
+            <button class="arrow left-arrow" id="prevImage">❮</button>
+            <img id="badgeImage"  alt="Badge Image">
+            <button class="arrow right-arrow" id="nextImage">❯</button>
+            <div class="thumbnail-container">
+                <div class="thumbnail-row">
+                </div>
+            </div>
+            <p id="badgeDescription"></p>
+        </div>
+    </div>
+    
+
     <!-- Past Experience Section -->
     <section id="experience" class="section">
         <h2 id="experience-title">Past Experience</h2>
@@ -409,7 +453,7 @@
                         <h4>Project Deliverables</h4>
                         <ul>
                             <li>Summarises the text based on what the user highlight on the webpage</li>
-                            <li>Utilized Geminai API to help with the summarising of text</li>
+                            <li>Utilized Gemini API to help with the summarising of text</li>
                             <li>Styled the extention with CSS to make it more user friendly</li>
                         </ul>
                         <a href="https://github.com/Poplol517/HAI-Extension" target="_blank" class="social-icon">
@@ -432,7 +476,10 @@
                     </div>
                     <h3>WET Manufacturing Intern</h3>
                     <h4>Micron Technologies | Apr 2024 - Aug 2023</h4>
-                    <p>As an intern at Micron, I support colleagues by developing SOPs, coordinating tasks, and enhancing workplace safety while deepening my understanding of the semiconductor manufacturing industry and exploring IoT sensors' role in industrial operations.</p>
+                    <p>As an intern at Micron, I support colleagues by developing SOPs, coordinating tasks, and enhancing workplace safety 
+                        while deepening my understanding of the semiconductor manufacturing industry and exploring IoT sensors' role in industrial operations.
+                        I also had the opportunity to speak at a Polytechnic Visit, sharing my internship experience, which was a interesting yet valuable experience
+                    </p>
                 </div>
             </div>
     
