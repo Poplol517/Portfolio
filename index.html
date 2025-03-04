@@ -319,6 +319,49 @@
         <h2 id="experience-title">Past Experience</h2>
         <div class="timeline">
 
+            <div class="timeline-item left" id="webscrapper-project">
+                <div class="timeline-content">
+                    <img src="images/webscrapper/webscrapper_icon.png" alt="webscrapper Icon" class="project-icon" style="width:225px;  padding-left:15px;"> 
+                    <h3>Web Scrapper Projects</h3>
+                    <h4>Personal Projects | Feb 2025 - Current</h4>
+                    <p>Creating Web Scrappers to gain a better understanding of how web scrapper works and help to increase my day to day life efficiency</p>
+                    <h4 class="click-more" onclick="openProjectModal()"> Click To Find Out More</h4>
+                </div>
+            </div>
+            <!-- Popup Modal -->
+            <div id="webscrapperprojectModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>Web Scrapper Projects</h3>
+                    <div class="timeline-content" popup = "true">
+                        <div class="gallery-container">
+                            <div class="image-wrapper">
+                                <button class="arrow left-arrow" onclick="prevImage('webscrapperprojectModal')">❮</button>
+                                <div class="main-image">
+                                    <img id="displayedImage" src="images/webscrapper/textrank.png" alt="webscrapper Image">
+                                </div>
+                                <button class="arrow right-arrow" onclick="nextImage('webscrapperprojectModal')">❯</button>
+                            </div>
+                            <div class="thumbnail-container">
+                                <div class="thumbnail-row">
+                                    <img class="thumbnail" src="images/webscrapper/textrank.png" alt="Thumbnail 1" onclick="changeImage('images/webscrapper/textrank.png')">
+                                    <img class="thumbnail" src="images/webscrapper/openai.png" alt="Thumbnail 2" onclick="changeImage('images/webscrapper/openai.png')">
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Personal Projects | Feb 2025 - Current</h4>
+                        <p>Creating Web Scrappers to gain a better understanding of how web scrapper works and help to increase my day to day life efficiency</p>
+                        <h4>Project Deliverables</h4>
+                        <ul>
+                            <li>Able to scrap multiple new articles at once</li>
+                            <li>Able to generate a short summary of news article using Textrank and Openai API to shorten reading time</li>
+                        </ul>
+                        <a href="https://github.com/Poplol517/Web-Scrapper" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>  Click here to view project repository for source code
+                        </a>
+                    </div>
+                </div>
+            </div>
             <div class="timeline-item right" id="mp-project">
                 <div class="timeline-content">
                     <img src="images/mp/mp_icon.png" alt="MP Icon" class="project-icon" style="width:225px;  padding-left:15px;"> 

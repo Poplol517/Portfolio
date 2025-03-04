@@ -108,13 +108,6 @@ document.addEventListener("DOMContentLoaded", function() {
     tabs[0].click();
 });
 
-// Get the modal and the project entry
-let fullsdModal = document.getElementById("projectModal");
-let iotProjectModal = document.getElementById("iotprojectModal");
-let aimlProjectModal = document.getElementById("aimlprojectModal");
-let mdadProjectModal = document.getElementById("mdadprojectModal");
-let haiProjectModal = document.getElementById("haiprojectModal");
-let mpProjectModal = document.getElementById("mpprojectModal");
 
 // Get the project entries
 let fullsdProjectEntry = document.getElementById("sell-swap-project");
@@ -123,6 +116,7 @@ let aimlProjectEntry = document.getElementById("aiml-project");
 let mdadProjectEntry = document.getElementById("mdad-project");
 let haiProjectEntry = document.getElementById("hai-project");
 let mpProjectEntry = document.getElementById("mp-project");
+let webscrapperProjectEntry = document.getElementById("webscrapper-project");
 
 // Get the close buttons for both modals
 let closeBtns = document.getElementsByClassName("close");
@@ -158,6 +152,10 @@ mpProjectEntry.addEventListener("click", function() {
     openProjectModal(mpprojectModal);
 });
 
+webscrapperProjectEntry.addEventListener("click", function() {
+    openProjectModal(webscrapperprojectModal);
+});
+
 // When the user clicks on <span> (x), close the corresponding modal
 Array.from(closeBtns).forEach(function(closeBtn) {
     closeBtn.addEventListener("click", function() {
@@ -184,6 +182,9 @@ window.addEventListener("click", function(event) {
     }
     if (event.target == mpProjectModal) {
         mpProjectModal.style.display = "none";
+    }
+    if (event.target == webscrapperProjectModal) {
+        webscrapperProjectModal.style.display = "none";
     }
 });
 
@@ -319,6 +320,12 @@ function getModalImages(modalId) {
                 'images/mp/flask.png',
                 'images/mp/dashboard.png',
                 'images/mp/2d_3d_model.png'
+            ];
+        }
+        else if (modalId === 'webscrapperprojectModal') { 
+            window.modalImageData[modalId] = [
+                'images/webscrapper/textrank.png',
+                'images/webscrapper/openai.png'
             ];
         }
         window.modalImageData[modalId].currentIndex = 0; // Start at the first image
