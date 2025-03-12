@@ -108,6 +108,13 @@ document.addEventListener("DOMContentLoaded", function() {
     tabs[0].click();
 });
 
+let fullsdModal = document.getElementById("projectModal");
+let aimlProjectModal = document.getElementById("aimlprojectModal");
+let mdadProjectModal = document.getElementById("mdadprojectModal");
+let haiProjectModal = document.getElementById("haiprojectModal");
+let mpProjectModal = document.getElementById("mpprojectModal");
+let iotProjectModal = document.getElementById("iotprojectModal");
+let webscrapperProjectModal = document.getElementById("webscrapperprojectModal");
 
 // Get the project entries
 let fullsdProjectEntry = document.getElementById("sell-swap-project");
